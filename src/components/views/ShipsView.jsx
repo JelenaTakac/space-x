@@ -8,4 +8,4 @@ const ShipsView = () => {
   )
 }
 
-export default ShipsView
+export default ShipsView;

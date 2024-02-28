@@ -8,4 +8,4 @@ const RocketsView = () => {
   )
 }
 
-export default RocketsView
+export default RocketsView;

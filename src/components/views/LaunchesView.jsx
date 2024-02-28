@@ -8,4 +8,4 @@ const LaunchesView = () => {
   )
 }
 
-export default LaunchesView
+export default LaunchesView;

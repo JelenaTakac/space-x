@@ -1,6 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   HomeView,
   LaunchesView,
@@ -8,7 +7,7 @@ import {
   ShipsView,
   ErrorPageView,
 } from "./components/views";
-import Navbar from "./components/navbar/Navbar";
+import { Navbar } from "./components/navbar";
 
 function App() {
   return (

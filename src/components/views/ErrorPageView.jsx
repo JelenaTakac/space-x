@@ -8,4 +8,4 @@ const ErrorPageView = () => {
   )
 }
 
-export default ErrorPageView
+export default ErrorPageView;

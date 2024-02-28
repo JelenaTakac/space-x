@@ -1,14 +1,15 @@
+import "./style.css";
 import NavTabsItem from "./NavTabsItem";
+import * as routes from "../../constants/routes"
 
 const NavTabs = () => {
-
-    const navbarItems = ["launches", "rockets", "ships"];
-
     return (
-        <>
-            {navbarItems.map((item, i) => <NavTabsItem key={i} item={item}/>)}
-        </>
-    )
+        <div className="navtabs-wrapper">
+            {Object.values(routes).filter(route => route !== "Home").map((route, index) => (
+                <NavTabsItem key={index} value={route}/>
+            ))}
+        </div>
+    );
 }
 
-export default NavTabs
+export default NavTabs;

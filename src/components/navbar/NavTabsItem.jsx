@@ -1,12 +1,7 @@
 import {Link} from "react-router-dom";
 
-const NavTabsItem = ({item}) => {
-  return (
-   <>
-   <Link to={`/${item}`}>{item}</Link>
-
-   </>
-  )
+const NavTabsItem = ({value}) => {
+  return <Link to={value.toLowerCase()}>{value}</Link>
 }
 
-export default NavTabsItem
+export default NavTabsItem;

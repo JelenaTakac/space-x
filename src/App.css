@@ -1,17 +1,5 @@
 .App {
   text-align: center;
-}
-
-.navbar {
-  display: flex;
-  width: 50vw;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  background-color: lightblue;
-}
-
-.navbar-logo {
-  width: 200px;
-  cursor: pointer;
+  background-color: #000;
+  color: #fff;
 }
