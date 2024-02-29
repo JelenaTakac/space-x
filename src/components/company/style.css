@@ -1,0 +1,14 @@
+.company-container {
+  display: flex;
+  justify-content: center;
+  gap: 20vw;
+  align-items: center;
+}
+
+.company-info {
+  text-align: left;
+}
+
+.company-socials p a {
+  color: #fff;
+}

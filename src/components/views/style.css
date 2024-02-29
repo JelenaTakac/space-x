@@ -1,0 +1,20 @@
+.launches {
+  display: grid;
+  width: 90vw;
+  margin: 70px auto 0;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.launch-container {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.launch-container img {
+  width: 10vw;
+}
+
+.launch-container p {
+  padding: 0 10px;
+}
