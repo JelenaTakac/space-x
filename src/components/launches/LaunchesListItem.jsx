@@ -1,15 +1,19 @@
 import { Card } from "../../styledComponents/GlobalStyles";
+import { Link } from "react-router-dom";
 
 const LaunchesListItem = ({launch}) => {
-    const {name, details} = launch;
+    const {id, name, details} = launch;
     const {small} = launch.links.patch;
 
+
     return (
-        <Card>
+        <Link to={`/launches/${id}`}>
+            <Card>
             <h3>Name: {name}</h3>
             <img src={small} alt={launch.name} />
             <p>{details}</p>
-        </Card>
+            </Card>
+        </Link>
     )
 }
 

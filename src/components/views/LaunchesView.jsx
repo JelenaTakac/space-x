@@ -1,35 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import api from "../../services/api";
 import LaunchesList from "../launches/LaunchesList";
 import "./style.css"
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
+import { LaunchesContext } from "../../context/LaunchesContext";
 
 const LaunchesView = () => {
-    const [launches, setLaunches] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
+    const {state, dispatch} = useContext(LaunchesContext);
+    const {launches, loading, error} = state;
 
     useEffect(() => {
+        dispatch({type: "FETCH_LAUNCHES-REQUEST"});
         api.get("launches")
         .then(res => {
-            console.log(res.data.splice(0, 10))
-            setLaunches(res.data.splice(18, 10));
-            setIsLoading(true);
+            dispatch({
+                type: "FETCH_LAUNCHES_SUCCESS",
+                payload: res.data.slice(0, 10),
+            })
         })
         .catch(error => {
-            setIsError(true);
-            console.error(error);
-        })
-        .finally(() => {
-            setIsLoading(false);
-        })
+                dispatch({
+                    type: "FETCH-LAUNCHES-FAILURE",
+                    payload: error.response,
+                })
+            })
     }, []);
 
 
   return (
     <>
-        {isLoading ? <Loading /> : isError ? <Error /> : <LaunchesList launches={launches}/>} 
+        {loading ? <Loading /> : error ? <Error error={error}/> : <LaunchesList launches={launches}/>} 
     </>
   )
 }
