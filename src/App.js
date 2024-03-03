@@ -12,6 +12,8 @@ import LaunchesContextProvider from "./context/LaunchesContext";
 import LaunchView from "./components/views/LaunchView";
 import ShipsContextProvider from "./context/ShipsContext";
 import ShipView from "./components/views/ShipView";
+import RocketsContextProvider from "./context/RocketsContext";
+import RocketView from "./components/views/RocketView";
 
 function App() {
   return (
@@ -19,16 +21,19 @@ function App() {
       <Router>
         <LaunchesContextProvider>
           <ShipsContextProvider>
-            <Navbar />
-            <Routes>
-              <Route path="/launches" element={<LaunchesView />} />
-              <Route path="/launches/:launchId" element={<LaunchView />} />
-              <Route path="/rockets" element={<RocketsView />} />
-              <Route path="/ships" element={<ShipsView />} />
-              <Route path="/ships/:shipId" element={<ShipView />} />
-              <Route path="/" element={<HomeView />} />
-              <Route path="*" element={<ErrorPageView />} />
-            </Routes>
+            <RocketsContextProvider>
+              <Navbar />
+              <Routes>
+                <Route path="/launches" element={<LaunchesView />} />
+                <Route path="/launches/:launchId" element={<LaunchView />} />
+                <Route path="/rockets" element={<RocketsView />} />
+                <Route path="/rockets/:rocketId" element={<RocketView />} />
+                <Route path="/ships" element={<ShipsView />} />
+                <Route path="/ships/:shipId" element={<ShipView />} />
+                <Route path="/" element={<HomeView />} />
+                <Route path="*" element={<ErrorPageView />} />
+              </Routes>
+            </RocketsContextProvider>
           </ShipsContextProvider>
         </LaunchesContextProvider>
       </Router>
