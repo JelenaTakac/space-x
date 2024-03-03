@@ -5,23 +5,28 @@ import "./style.css"
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
 import { LaunchesContext } from "../../context/LaunchesContext";
+import {
+  FETCH_LAUNCHES_REQUEST,
+  FETCH_LAUNCHES_SUCCESS,
+  FETCH_LAUNCHES_FAILURE,
+} from "../../constants/actions";
 
 const LaunchesView = () => {
     const {state, dispatch} = useContext(LaunchesContext);
     const {launches, loading, error} = state;
 
     useEffect(() => {
-        dispatch({type: "FETCH_LAUNCHES-REQUEST"});
+        dispatch({type: FETCH_LAUNCHES_REQUEST});
         api.get("launches")
         .then(res => {
             dispatch({
-                type: "FETCH_LAUNCHES_SUCCESS",
+                type: FETCH_LAUNCHES_SUCCESS,
                 payload: res.data.slice(0, 10),
             })
         })
         .catch(error => {
                 dispatch({
-                    type: "FETCH-LAUNCHES-FAILURE",
+                    type: FETCH_LAUNCHES_FAILURE,
                     payload: error.response,
                 })
             })
