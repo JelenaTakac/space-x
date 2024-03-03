@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../services/api";
 
-const SingleLaunchPage = () => {
+const LaunchView = () => {
     const {launchId} = useParams();
     const navigate = useNavigate();
     const [launchInfo, setLaunchInfo] = useState(undefined);
@@ -35,4 +35,4 @@ const SingleLaunchPage = () => {
   )
 }
 
-export default SingleLaunchPage;
+export default LaunchView;

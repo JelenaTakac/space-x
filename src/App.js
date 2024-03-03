@@ -9,7 +9,7 @@ import {
 } from "./components/views";
 import { Navbar } from "./components/navbar";
 import LaunchesContextProvider from "./context/LaunchesContext";
-import SingleLaunchPage from "./components/launches/SingleLaunchPage";
+import LaunchView from "./components/views/LaunchView";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/launches" element={<LaunchesView />} />
-            <Route path="/launches/:launchId" element={<SingleLaunchPage />} />
+            <Route path="/launches/:launchId" element={<LaunchView />} />
             <Route path="/rockets" element={<RocketsView />} />
             <Route path="/ships" element={<ShipsView />} />
             <Route path="/" element={<HomeView />} />
