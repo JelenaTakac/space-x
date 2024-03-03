@@ -25,7 +25,7 @@ export const launchesReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        error: action.payload, //mogao je biti i false
+        error: action.payload, //mogao je biti i false -> action.apyload zato sto smo prosledili error.response posot zelimo da nam ispise iz tog respona "Not fond"
       };
 
     default:
