@@ -1,4 +1,5 @@
 import ShipsListItem from './ShipsListItem'
+import "./style.css"
 
 const ShipsList = ({ships}) => {
   return (

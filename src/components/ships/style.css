@@ -1,0 +1,7 @@
+.ships {
+  display: grid;
+  width: 90vw;
+  margin: 70px auto 0;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
