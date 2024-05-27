@@ -11,7 +11,7 @@ const Company = ({companyInfo}) => {
             <h3>Founder: {founder}</h3>
             <h3>Employees: {employees}</h3>
             {Object.keys(companyInfo.headquarters).map(key => (
-                <h4 key={key}>{key}: {companyInfo.headquarters[key]}</h4>
+                <h4 key={key} className="capitalize">{key}: {companyInfo.headquarters[key]}</h4>
             ))}
         </div>
         <div className="company-socials">

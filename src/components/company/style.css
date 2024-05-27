@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 20vw;
   align-items: center;
+  margin-top: 80px;
 }
 
 .company-info {
@@ -11,4 +12,8 @@
 
 .company-socials p a {
   color: #fff;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
